@@ -24,9 +24,15 @@
     <ClCompile Include="src\DisplayOutput.cpp">
       <Filter>Source Files\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\VisibleObject.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\DisplayOutput.hpp">
+      <Filter>Source Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VisibleObject.hpp">
       <Filter>Source Files\src</Filter>
     </ClInclude>
   </ItemGroup>

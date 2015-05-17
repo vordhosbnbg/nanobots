@@ -75,9 +75,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\VisibleObject.cpp" />
     <ClCompile Include="src\DisplayOutput.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\VisibleObject.hpp" />
     <ClInclude Include="src\DisplayOutput.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

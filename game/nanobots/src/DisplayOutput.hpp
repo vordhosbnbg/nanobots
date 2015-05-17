@@ -26,6 +26,10 @@ public:
     void EnableVsync(){ m_Vsync = true; }
     void DisableVsync(){ m_Vsync = false; }
     void SetWindowTitle(const wchar_t * title) { m_WindowCaption = title; }
+    inline IrrlichtDevice* GetDevice(){ return m_device; }
+    inline IVideoDriver* GetVideoDriver(){ return m_driver; }
+    inline ISceneManager* GetSceneManager(){ return m_smgr; }
+    inline IGUIEnvironment* GetGUI(){ return m_guienv; }
 private:
     DisplayOutput();
     DisplayOutput(DisplayOutput const&);    // Don't Implement
@@ -36,7 +40,10 @@ private:
     unsigned int m_hRes;
     unsigned int m_vRes;
     wstring m_WindowCaption;
-    IrrlichtDevice *device;
+    IrrlichtDevice* m_device;
+    IVideoDriver* m_driver;
+    ISceneManager* m_smgr;
+    IGUIEnvironment* m_guienv;
 };
 
 #endif
