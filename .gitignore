@@ -1,10 +1,10 @@
 *.suo
 *.sdf
 *.opensdf
-*.obj
 *.log
 *.ilk
 *.pdb
 *.idb
 *.tlog
 *.lastbuildstate
+game/nanobots/Debug
