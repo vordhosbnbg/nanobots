@@ -29,7 +29,19 @@ int main()
     cube.LoadMesh("../res/models/pivot_cube.obj");
     cube.AddObjectToScene();
     cube.LoadTexture("../res/textures/metal_texture_71.jpg");
-    getEng.GetSceneManager()->addCameraSceneNode(0, vector3df(0, 300, -400), vector3df(0, 5, 0));
+    cube.EnableLightning(true);
+
+    VisibleObject crystal;
+    crystal.LoadMesh("../res/models/crystal.obj");
+    crystal.SetPosition(vector3df(155, 155, 155));
+    crystal.SetScale(vector3df(100, 100, 100));
+    crystal.AddObjectToScene();
+    crystal.LoadTexture("../res/textures/amethyst.jpg");
+    crystal.EnableLightning(true);
+
+    getEng.GetSceneManager()->addCameraSceneNodeMaya(); //0, vector3df(0, 300, -400), vector3df(0, 5, 0)
+    getEng.GetSceneManager()->addLightSceneNode(0, vector3df(100,200,300));
+    //getEng.GetSceneManager()->setAmbientLight(SColorf(0xFFFFFFFF));
 
     while (getEng.GetDevice()->run())
     {
@@ -40,7 +52,7 @@ int main()
         the GUI Environment draw their content. With the endScene()
         call everything is presented on the screen.
         */
-        getEng.GetVideoDriver()->beginScene(true, true, SColor(255, 100, 101, 140));
+        getEng.GetVideoDriver()->beginScene(true, true, SColor(255, 50, 50, 50));
 
         getEng.GetSceneManager()->drawAll();
         getEng.GetGUI()->drawAll();
