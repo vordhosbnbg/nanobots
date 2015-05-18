@@ -1,5 +1,5 @@
-#ifndef DISPLAY_OUTPUT_HPP
-#define DISPLAY_OUTPUT_HPP
+#ifndef IRRLICHT_ENGINE_HPP
+#define IRRLICHT_ENGINE_HPP
 
 #include <irrlicht.h>
 #include <string>
@@ -11,13 +11,13 @@ using namespace io;
 using namespace gui;
 using namespace std;
 
-#define getDisp DisplayOutput::getInstance()
+#define getEng IrrlichtEngine::getInstance()
 
-class DisplayOutput
+class IrrlichtEngine
 {
 public:
-    static DisplayOutput& getInstance();
-    ~DisplayOutput();
+    static IrrlichtEngine& getInstance();
+    ~IrrlichtEngine();
 
     bool SetMode();
     void SetResolution(unsigned int hRes, unsigned int vRes){ m_hRes = hRes; m_vRes = vRes; }
@@ -31,9 +31,9 @@ public:
     inline ISceneManager* GetSceneManager(){ return m_smgr; }
     inline IGUIEnvironment* GetGUI(){ return m_guienv; }
 private:
-    DisplayOutput();
-    DisplayOutput(DisplayOutput const&);    // Don't Implement
-    void operator=(DisplayOutput const&);   // Don't implement
+    IrrlichtEngine();
+    IrrlichtEngine(IrrlichtEngine const&);    // Don't Implement
+    void operator=(IrrlichtEngine const&);   // Don't implement
 
     bool m_Vsync;
     bool m_Fullscreen;

@@ -76,11 +76,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\VisibleObject.cpp" />
-    <ClCompile Include="src\DisplayOutput.cpp" />
+    <ClCompile Include="src\IrrlichtEngine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\VisibleObject.hpp" />
-    <ClInclude Include="src\DisplayOutput.hpp" />
+    <ClInclude Include="src\IrrlichtEngine.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,5 @@
 #include <irrlicht.h>
-#include "DisplayOutput.hpp"
+#include "IrrlichtEngine.hpp"
 #include "VisibleObject.hpp"
 
 using namespace irr;
@@ -18,20 +18,20 @@ using namespace gui;
 
 int main()
 {
-    getDisp.SetResolution(1920, 1080);
-    getDisp.EnableFullscreen();
-    getDisp.EnableVsync();
-    getDisp.SetWindowTitle(L"Nanobots Game");
-    getDisp.SetMode();
+    getEng.SetResolution(1024, 768);
+    getEng.DisableFullscreen();
+    getEng.EnableVsync();
+    getEng.SetWindowTitle(L"Nanobots Game");
+    getEng.SetMode();
 
 
     VisibleObject cube;
     cube.LoadMesh("../res/models/pivot_cube.obj");
     cube.AddObjectToScene();
     cube.LoadTexture("../res/textures/metal_texture_71.jpg");
-    getDisp.GetSceneManager()->addCameraSceneNode(0, vector3df(0, 300, -400), vector3df(0, 5, 0));
+    getEng.GetSceneManager()->addCameraSceneNode(0, vector3df(0, 300, -400), vector3df(0, 5, 0));
 
-    while (getDisp.GetDevice()->run())
+    while (getEng.GetDevice()->run())
     {
         /*
         Anything can be drawn between a beginScene() and an endScene()
@@ -40,12 +40,12 @@ int main()
         the GUI Environment draw their content. With the endScene()
         call everything is presented on the screen.
         */
-        getDisp.GetVideoDriver()->beginScene(true, true, SColor(255, 100, 101, 140));
+        getEng.GetVideoDriver()->beginScene(true, true, SColor(255, 100, 101, 140));
 
-        getDisp.GetSceneManager()->drawAll();
-        getDisp.GetGUI()->drawAll();
+        getEng.GetSceneManager()->drawAll();
+        getEng.GetGUI()->drawAll();
 
-        getDisp.GetVideoDriver()->endScene();
+        getEng.GetVideoDriver()->endScene();
     }
 
     return 0;

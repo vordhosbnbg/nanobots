@@ -15,6 +15,7 @@ public:
     bool LoadMesh(const char * pathToMesh);
     bool LoadTexture(const char * pathToTexture);
     bool AddObjectToScene();
+    void EnableLightning(bool value);
 
 private:
     IAnimatedMesh* m_mesh;

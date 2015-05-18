@@ -21,18 +21,18 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\DisplayOutput.cpp">
+    <ClCompile Include="src\VisibleObject.cpp">
       <Filter>Source Files\src</Filter>
     </ClCompile>
-    <ClCompile Include="src\VisibleObject.cpp">
+    <ClCompile Include="src\IrrlichtEngine.cpp">
       <Filter>Source Files\src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\DisplayOutput.hpp">
+    <ClInclude Include="src\VisibleObject.hpp">
       <Filter>Source Files\src</Filter>
     </ClInclude>
-    <ClInclude Include="src\VisibleObject.hpp">
+    <ClInclude Include="src\IrrlichtEngine.hpp">
       <Filter>Source Files\src</Filter>
     </ClInclude>
   </ItemGroup>

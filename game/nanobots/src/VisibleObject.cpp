@@ -1,5 +1,5 @@
 #include "VisibleObject.hpp"
-#include "DisplayOutput.hpp"
+#include "IrrlichtEngine.hpp"
 
 VisibleObject::VisibleObject():
     m_mesh(NULL),
@@ -18,7 +18,7 @@ bool VisibleObject::LoadMesh(const char * pathToMesh)
     bool retVal = false;
     if (!m_mesh)
     {
-        m_mesh = getDisp.GetSceneManager()->getMesh(pathToMesh);
+        m_mesh = getEng.GetSceneManager()->getMesh(pathToMesh);
         if (m_mesh)
         {
             retVal = true;
@@ -33,7 +33,7 @@ bool VisibleObject::LoadTexture(const char * pathToTexture)
     bool retVal = false;
     if (m_sceneNode)
     {
-        m_sceneNode->setMaterialTexture(0, getDisp.GetVideoDriver()->getTexture(pathToTexture));
+        m_sceneNode->setMaterialTexture(0, getEng.GetVideoDriver()->getTexture(pathToTexture));
     }
     return retVal;
 }
@@ -46,15 +46,19 @@ bool VisibleObject::AddObjectToScene()
     {
         if (m_mesh)
         {
-            m_sceneNode = getDisp.GetSceneManager()->addAnimatedMeshSceneNode(m_mesh);
+            m_sceneNode = getEng.GetSceneManager()->addAnimatedMeshSceneNode(m_mesh);
             if (m_sceneNode)
             {
-                m_sceneNode->setMaterialFlag(EMF_LIGHTING, false);
-                m_sceneNode->setMD2Animation(scene::EMAT_STAND);
+                m_sceneNode->setMaterialFlag(EMF_LIGHTING, m_lightningEnabled);
                 retVal = true;
             }
         }
     }
 
     return retVal;
+}
+
+void VisibleObject::EnableLightning(bool value)
+{
+    m_lightningEnabled = value;
 }

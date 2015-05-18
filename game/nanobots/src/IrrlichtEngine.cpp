@@ -1,7 +1,7 @@
-#include "DisplayOutput.hpp"
+#include "IrrlichtEngine.hpp"
 #include <irrlicht.h>
 
-DisplayOutput::DisplayOutput() : 
+IrrlichtEngine::IrrlichtEngine() : 
     m_hRes(640), 
     m_vRes(480), 
     m_Fullscreen(false), 
@@ -14,21 +14,21 @@ DisplayOutput::DisplayOutput() :
     //Constructor
 }
 
-DisplayOutput::~DisplayOutput()
+IrrlichtEngine::~IrrlichtEngine()
 {
     //Destructor
 }
 
 
-DisplayOutput& DisplayOutput::getInstance()
+IrrlichtEngine& IrrlichtEngine::getInstance()
 {
-    static DisplayOutput instance;
+    static IrrlichtEngine instance;
 
     return instance;
 }
 
 
-bool DisplayOutput::SetMode()
+bool IrrlichtEngine::SetMode()
 {
     bool retVal = false;
 
