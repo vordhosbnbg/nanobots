@@ -25,21 +25,29 @@ int main()
     getEng.SetMode();
 
 
-    VisibleObject cube;
-    cube.LoadMesh("../res/models/pivot_cube.obj");
-    cube.AddObjectToScene();
-    cube.LoadTexture("../res/textures/metal_texture_71.jpg");
-    cube.EnableLightning(true);
+    //VisibleObject cube;
+    //cube.LoadMesh("../res/models/pivot_cube.obj");
+    //cube.AddObjectToScene();
+    //cube.LoadTexture("../res/textures/metal_texture_71.jpg");
+    //cube.EnableLightning(true);
 
-    VisibleObject crystal;
-    crystal.LoadMesh("../res/models/crystal.obj");
-    crystal.SetPosition(vector3df(155, 155, 155));
-    crystal.SetScale(vector3df(100, 100, 100));
-    crystal.AddObjectToScene();
-    crystal.LoadTexture("../res/textures/amethyst.jpg");
-    crystal.EnableLightning(true);
+    //VisibleObject crystal;
+    //crystal.LoadMesh("../res/models/crystal.obj");
+    //crystal.SetPosition(vector3df(155, 155, 155));
+    //crystal.SetScale(vector3df(100, 100, 100));
+    //crystal.AddObjectToScene();
+    //crystal.LoadTexture("../res/textures/amethyst.jpg");
+    //crystal.EnableLightning(true);
 
-    getEng.GetSceneManager()->addCameraSceneNodeMaya(); //0, vector3df(0, 300, -400), vector3df(0, 5, 0)
+    VisibleObject broccoli;
+    broccoli.LoadMesh("../res/models/ccube.obj");
+    broccoli.SetPosition(vector3df(0, 0, 0));
+    broccoli.SetScale(vector3df(0.5f, 0.5f, 0.5f));
+    broccoli.AddObjectToScene();
+    broccoli.LoadTexture("../res/textures/amethyst.jpg");
+    broccoli.EnableLightning(true);
+
+    getEng.GetSceneManager()->addCameraSceneNodeFPS(); //0, vector3df(0, 300, -400), vector3df(0, 5, 0)
     getEng.GetSceneManager()->addLightSceneNode(0, vector3df(100,200,300));
     //getEng.GetSceneManager()->setAmbientLight(SColorf(0xFFFFFFFF));
 
